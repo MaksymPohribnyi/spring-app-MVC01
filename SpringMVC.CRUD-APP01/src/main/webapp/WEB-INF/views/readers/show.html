@@ -15,7 +15,7 @@
 	<div th:unless="${#lists.isEmpty(books)}">
 		<p> <b> Books: </b> </p>
 		<tr th:each="book : ${books}">
-			<td th:text="${book.getTitle() + ', ' + book.getAuthor() + ', ' + book.getYear_of_release()}" />
+			<td th:text="${book.getTitle() + ', ' + book.getAuthor() + ', ' + book.getYearOfRelease()}" />
 			<br />
 		</tr>
 	</div>

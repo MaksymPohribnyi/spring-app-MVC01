@@ -11,8 +11,8 @@ public class Book {
 	private String title;
 	@NotEmpty(message = "Author should be not empty")
 	private String author;
-	@Min(value = 0, message = "Year of release should be greater then 0")
-	private int year_of_release;
+	@Min(value = 1850, message = "Year of release should be greater then 1850")
+	private int yearOfRelease;
 
 	private int id;
 	private int reader_id;
@@ -21,10 +21,10 @@ public class Book {
 
 	}
 
-	public Book(String title, String author, int year_of_release, int id, int reader_id) {
+	public Book(String title, String author, int yearOfRelease, int id, int reader_id) {
 		this.title = title;
 		this.author = author;
-		this.year_of_release = year_of_release;
+		this.yearOfRelease = yearOfRelease;
 		this.id = id;
 		this.reader_id = reader_id;
 	}
@@ -45,12 +45,12 @@ public class Book {
 		this.author = author;
 	}
 
-	public int getYear_of_release() {
-		return year_of_release;
+	public int getYearOfRelease() {
+		return yearOfRelease;
 	}
 
-	public void setYear_of_release(int year_of_release) {
-		this.year_of_release = year_of_release;
+	public void setYearOfRelease(int yearOfRelease) {
+		this.yearOfRelease = yearOfRelease;
 	}
 
 	public int getId() {

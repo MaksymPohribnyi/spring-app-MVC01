@@ -47,4 +47,10 @@ public class ReaderDAO {
 		jdbcTemplate.update("DELETE FROM Reader WHERE reader_id = ?", id);
 	}
 
+	public Optional<Reader> showBookHolder(int bookId) {
+		return jdbcTemplate.query(
+				"SELECT * FROM reader LEFT JOIN book ON reader.reader_id = book.reader_id WHERE book.book_id = ?",
+				new ReaderRowMapper(), bookId).stream().findAny();
+	}
+
 }
